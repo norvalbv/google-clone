@@ -1,0 +1,48 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    color: white;    
+    text-transform: uppercase;
+}
+
+// .logo, .search, .theme {
+//     flex: 1;
+// }
+
+.logo {
+    margin-left: 1rem;
+    font-weight: bold;
+}
+
+.search input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    width: 25rem;
+    height: 3rem;
+    background: none;
+    text-align: center;
+
+    &:focus {
+        color: inherit;
+    }
+}
+
+.theme button {
+    border: none;
+    border-radius: 5px;
+    width: 5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+    box-shadow: 2px 2px 5px #999;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+
+    &:hover {
+        background: #aaa;
+        cursor: pointer;
+    }
+}
