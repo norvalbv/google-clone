@@ -2,19 +2,21 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #000;
-    color: white;    
     text-transform: uppercase;
+    height: 3rem;
+
+    .logo, .search, .theme {
+        flex: 1;
+    }
+    
+    #logo {
+        margin-left: 1rem;
+        color: #444;
+        font-weight: bold;
+    }
 }
 
-// .logo, .search, .theme {
-//     flex: 1;
-// }
 
-.logo {
-    margin-left: 1rem;
-    font-weight: bold;
-}
 
 .search input {
     outline: none;

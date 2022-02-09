@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+}
+
+body {
+  background: #ddd;
+  color: #444;
+}
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,30 @@
+.results {
+  padding: 1rem 3rem;
+  min-height: calc(100vh - 7rem);
+
+  .result {
+    margin: 0.75rem 0;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 0.25rem;
+  }
+
+  a {
+    color: #fff;
+    font-weight: normal;
+    text-decoration: none;
+  }
+}
+.title {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.link {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: rgb(177, 177, 177);
+}
+
+.desc {
+  font-size: 0.75rem;
+}

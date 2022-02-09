@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AAAA,CAAC,CAAC;EACE,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,UAAU,EAAE,UAAU;CACzB;;AAED,AAAA,IAAI,EAAE,IAAI,CAAC;EACP,WAAW,EAAE,iCAAiC;EAC9C,SAAS,EAAE,IAAI;CAClB;;AAMD,AAAA,IAAI,CAAC;EACD,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,IAAI;CACd;;ADhBD,AAAA,KAAK,CAAC;EACJ,KAAK,EAAE,IAAI;CACZ",
+    "sources": [
+        "links.scss",
+        "../../app.scss"
+    ],
+    "names": [],
+    "file": "links.css"
+}

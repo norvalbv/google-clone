@@ -1,36 +1,22 @@
 import "./app.scss";
-import React, { useState, useEffect } from "react";
 import { NavBar } from "./components/NavBar/navbar";
 import { Footer } from "./components/Footer/footer";
-// import { Routes } from "./components/Routes/routes";
+import AllRoutes from "./Routes/AllRoutes";
+import { useMainContext } from "./Context/maincontextprovider";
+import { Search } from "./components/Search/search";
+import { useEffect } from "react";
 
 function App() {
-  const [data, setData] = useState("");
+  const { searchTerm } = useMainContext();
 
-  // useEffect(() => {
-  //   fetch(
-  //     "https://google-search1.p.rapidapi.com/google-search?hl=en&q=Avengers%2BEndgame&gl=us",
-  //     {
-  //       method: "GET",
-  //       headers: {
-  //         "x-rapidapi-host": "google-search1.p.rapidapi.com",
-  //         "x-rapidapi-key":
-  //           "dffcc5f24emsh89532c7a5575c02p168eddjsn47c9716293e9",
-  //       },
-  //     }
-  //   )
-  //     .then((response) => {
-  //       setData(response)
-  //       console.log(response);
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-  // }, []);
+  if (searchTerm === "") {
+    return <Search />;
+  }
 
   return (
-    <div className="App" onClick={() => setData("Sasd")}>
+    <div className="App">
       <NavBar />
+      <AllRoutes />
       <Footer />
     </div>
   );
