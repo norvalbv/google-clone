@@ -61,7 +61,10 @@
   color: inherit;
 }
 
-.theme {
+.search-section-theme {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
   border: none;
   border-radius: 5px;
   width: 5rem;
@@ -74,14 +77,18 @@
   font-size: 12px;
 }
 
-.theme:hover {
+.search-section-theme:hover {
   background: #aaa;
   cursor: pointer;
 }
 
-.search-section-theme {
-  position: absolute;
-  top: 3rem;
-  right: 3rem;
+.light {
+  background-color: #dadada;
+  background-image: radial-gradient(at 0% 0%, #8a81b8 0, transparent 50%), radial-gradient(at 100% 0%, #5573d6 0, transparent 50%);
+}
+
+.dark {
+  background-color: #0f0e13;
+  background-image: radial-gradient(at 0% 0%, #100f15 0, transparent 50%), radial-gradient(at 100% 0%, #121931 0, transparent 50%);
 }
 /*# sourceMappingURL=search.css.map */

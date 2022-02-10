@@ -1,50 +1,72 @@
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-transform: uppercase;
-    height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  height: 5rem;
 
-    .logo, .search, .theme {
-        flex: 1;
-    }
-    
-    #logo {
-        margin-left: 1rem;
-        color: #444;
-        font-weight: bold;
-    }
+  #link-logo {
+    text-decoration: none;
+  }
+
+  #logo {
+    margin-left: 1rem;
+    color: #333;
+    font-weight: bold;
+  }
 }
 
-
+.search {
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  justify-content: center;
+}
 
 .search input {
-    outline: none;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    width: 25rem;
-    height: 3rem;
-    background: none;
-    text-align: center;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  width: 25rem;
+  height: 3rem;
+  background: none;
+  text-align: center;
 
-    &:focus {
-        color: inherit;
-    }
+  &:focus {
+    color: inherit;
+  }
 }
 
 .theme button {
-    border: none;
-    border-radius: 5px;
-    width: 5rem;
-    height: 1.5rem;
-    margin-right: 1rem;
-    box-shadow: 2px 2px 5px #999;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  width: 5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 
-    &:hover {
-        background: #aaa;
-        cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+  }
 }
+
+// .light {
+//   background: #444;
+//   color: #bbb;
+//   box-shadow: 2px 2px 5px #444;
+
+//   &:hover {
+//     background: #666;
+//   }
+// }
+
+// .dark {
+//     background: #bbb;
+//     color: #444;
+//     box-shadow: 2px 2px 5px #bbb;
+  
+//     &:hover {
+//       background: #666;
+//     }
+//   }
+  

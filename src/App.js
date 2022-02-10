@@ -4,18 +4,35 @@ import { Footer } from "./components/Footer/footer";
 import AllRoutes from "./Routes/AllRoutes";
 import { useMainContext } from "./Context/maincontextprovider";
 import { Search } from "./components/Search/search";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const { searchTerm } = useMainContext();
 
+  const [darkmode, setDarkMode] = useState(false);
+
+  const handleTheme = () => {
+    setDarkMode(!darkmode);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("Theme", darkmode);
+    console.log(localStorage);
+  }, [darkmode]);
+
+  const currentTheme = localStorage.getItem("Theme");
+
+  useEffect(() => {
+    currentTheme ? setDarkMode(true) : setDarkMode(false);
+  }, []);
+
   if (searchTerm === "") {
-    return <Search />;
+    return <Search darkmode={darkmode} setDarkMode={handleTheme} />;
   }
 
   return (
-    <div className="App">
-      <NavBar />
+    <div className={darkmode === true ? "dark" : "light"}>
+      <NavBar darkmode={darkmode} setDarkMode={handleTheme} />
       <AllRoutes />
       <Footer />
     </div>

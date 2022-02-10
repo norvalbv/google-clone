@@ -4,12 +4,10 @@ import "./search.scss";
 import { useDebounce } from "use-debounce";
 import { NavLink } from "react-router-dom";
 
-export const Search = () => {
-  const [dark, setDark] = useState(false);
-
+export const Search = ({ darkmode, setDarkMode }) => {
   const [search, setSearch] = useState("");
   const { setSearchTerm } = useMainContext();
-  const [debouncedValue] = useDebounce(search, 350);
+  const [debouncedValue] = useDebounce(search, 550);
 
   useEffect(() => {
     if (debouncedValue) {
@@ -23,7 +21,7 @@ export const Search = () => {
   };
 
   const handleSearchChange = (e) => {
-    console.log(e.target.value)
+    console.log(e.target.value);
     if (e.target.value === "Search") {
       console.log(e.target.value + "search");
       <NavLink to={"/search"} className="link"></NavLink>;
@@ -33,23 +31,14 @@ export const Search = () => {
   };
 
   return (
-    <div className="search-section">
-      <button
-        className="theme search-section-theme"
-        onClick={() => setDark(!dark)}
-      >
-        {dark ? "Dark" : "Light"}
+    <div className={darkmode ? "search-section dark" : "search-section light"}>
+      <button className="search-section-theme" onClick={setDarkMode}>
+        {darkmode ? "Dark" : "Light"}
       </button>
       <header>
         <h1>Benji's Google Clone</h1>
       </header>
       <div className="search-field">
-        <select id="search-dropdown" onChange={handleSearchChange}>
-          <option>Search</option>
-          <option>Images</option>
-          <option>News</option>
-          <option>Videos</option>
-        </select>
         <input
           type="text"
           placeholder="Search The Google Clone"

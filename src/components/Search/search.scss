@@ -52,7 +52,10 @@
   }
 }
 
-.theme {
+.search-section-theme {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
   border: none;
   border-radius: 5px;
   width: 5rem;
@@ -69,8 +72,23 @@
   }
 }
 
-.search-section-theme {
-  position: absolute;
-  top: 3rem;
-  right: 3rem;
+.light {
+  background-color: #dadada;
+  background-image: radial-gradient(
+      at 0% 0%,
+      rgb(138, 129, 184) 0,
+      transparent 50%
+    ),
+    radial-gradient(at 100% 0%, rgb(85, 115, 214) 0, transparent 50%);
 }
+
+.dark {
+  background-color: #0f0e13;
+  background-image: radial-gradient(
+      at 0% 0%,
+      hsla(253, 16%, 7%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(at 100% 0%, rgb(18, 25, 49) 0, transparent 50%);
+}
+

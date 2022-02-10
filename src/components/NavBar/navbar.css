@@ -9,19 +9,30 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   text-transform: uppercase;
-  height: 3rem;
+  height: 5rem;
 }
 
-nav .logo, nav .search, nav .theme {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+nav #link-logo {
+  text-decoration: none;
 }
 
 nav #logo {
   margin-left: 1rem;
-  color: #444;
+  color: #333;
   font-weight: bold;
+}
+
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: column-reverse nowrap;
+          flex-flow: column-reverse nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .search input {
@@ -44,15 +55,11 @@ nav #logo {
   width: 5rem;
   height: 1.5rem;
   margin-right: 1rem;
-  -webkit-box-shadow: 2px 2px 5px #999;
-          box-shadow: 2px 2px 5px #999;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 12px;
 }
 
 .theme button:hover {
-  background: #aaa;
   cursor: pointer;
 }
 /*# sourceMappingURL=navbar.css.map */

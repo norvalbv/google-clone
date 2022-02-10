@@ -5,16 +5,10 @@ import { useDebounce } from "use-debounce";
 import { Link } from "react-router-dom";
 import { Links } from "../Links/links";
 
-export function NavBar() {
-  const [dark, setDark] = useState(true);
-
-  const handleTheme = () => {
-    setDark(!dark);
-  };
-
+export function NavBar({ darkmode, setDarkMode }) {
   const [search, setSearch] = useState("");
-  const { setSearchTerm } = useMainContext();
-  const [debouncedValue] = useDebounce(search, 300);
+  const { setSearchTerm, SearchTerm } = useMainContext();
+  const [debouncedValue] = useDebounce(search, 550);
 
   useEffect(() => {
     if (debouncedValue) setSearchTerm(debouncedValue);
@@ -27,21 +21,21 @@ export function NavBar() {
   return (
     <nav>
       <div className="logo">
-        <Link to="/">
+        <Link to="/search" id="link-logo">
           <p id="logo">Google Clone</p>
         </Link>
       </div>
       <div className="search">
-        <Links />
+        <Links darkmode={darkmode} />
         <input
           type="text"
           placeholder="Search"
-          value={search}
+          value={SearchTerm === "" ? search : SearchTerm}
           onChange={handleChange}
         />
       </div>
       <div className="theme">
-        <button onClick={handleTheme}>{dark ? "dark" : "light"}</button>
+        <button onClick={setDarkMode}>{darkmode ? "dark" : "light"}</button>
       </div>
     </nav>
   );

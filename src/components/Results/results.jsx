@@ -10,7 +10,7 @@ export const Results = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.log(searchTerm + "from result section?")
+    console.log(searchTerm + "from result section?");
     if (searchTerm !== "") {
       if (location.pathname === "videos") {
         getData(`/search/q=${searchTerm} videos`);
@@ -28,12 +28,11 @@ export const Results = () => {
     case "/search":
       return (
         <div className="results">
-          {results?.map(({ link, title, desc }, index) => (
+          {results?.map(({ link, title }, index) => (
             <div key={index} className="result">
               <a href={link} target="_blank" rel="noopener noreferrer">
                 <h2 className="title">{title}</h2>
                 <p className="link">{link}</p>
-                <p className="desc">{desc === null ? null : desc}</p>
               </a>
             </div>
           ))}
@@ -41,17 +40,17 @@ export const Results = () => {
       );
     case "/images":
       return (
-        <div>
+        <div className="image-results">
           {results?.map(({ image, link: { href, title } }, index) => (
             <a
               href={href}
               target="_blank"
               key={index}
               rel="noreferrer noopener"
-              className="sm:p-3 p-5"
+              className="image-result"
             >
               <img src={image?.src} alt={title} loading="lazy" />
-              <p>{title}</p>
+              {/* <p>{title}</p> */}
             </a>
           ))}
         </div>
@@ -59,19 +58,25 @@ export const Results = () => {
     case "/news":
       return (
         <div className="results">
-          {results?.map(({ links, title, source }, index) => (
+          {results?.map(({ published, links, title, source }, index) => (
             <div key={index} className="result">
               <a
                 href={links?.[0].href}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <h2 className="title">{title}</h2>{" "}
+                <h2 className="title">{title}</h2>
               </a>
 
-              <a href={source?.href} target="_blank" rel="noopener noreferrer">
+              <a
+                className="link"
+                href={source?.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {source?.href}
               </a>
+              <p className="published-date">{published}</p>
             </div>
           ))}
         </div>
